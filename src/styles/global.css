@@ -64,9 +64,10 @@ html[lang="en"] body {
 }
 
 html[lang="en"] .hero__title {
-  font-family: "Space Grotesk", var(--font-latin);
-  font-weight: 600;
-  letter-spacing: -0.035em;
+  font-family: "Instrument Serif", "Space Grotesk", var(--font-latin);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 html[lang="en"] .hero__title-inner {
@@ -426,6 +427,17 @@ a:hover .arrow {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.15;
+}
+
+html[lang="en"] .brand__text {
+  font-family: "Instrument Serif", "Space Grotesk", var(--font-latin);
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+html[lang="en"] .brand__handle {
+  font-style: normal;
 }
 
 .brand__handle {
