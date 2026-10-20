@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        var stored = localStorage.getItem("shihab-theme");
+        var isDark =
+          stored === "dark" ||
+          (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.dataset.theme = isDark ? "dark" : "light";
+      } catch {}
+    </script>
+    <title>শিহাব — নূরানী শিক্ষক ও Kotlin লার্নার</title>
+    <meta
+      name="description"
+      content="শিহাবের ব্যক্তিগত পোর্টফোলিও — নূরানী শিক্ষক, Kotlin লার্নার এবং বাংলায় কোড শেখানোর কারিগর। প্রজেক্ট, দক্ষতা ও যোগাযোগ।"
+    />
+    <meta name="author" content="শিহাব" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f6f5f2" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="bn_BD" />
+    <meta property="og:title" content="শিহাব — নূরানী শিক্ষক ও Kotlin লার্নার" />
+    <meta
+      property="og:description"
+      content="প্রজেক্ট, দক্ষতা ও যোগাযোগ — শিহাবের ব্যক্তিগত পোর্টফোলিও।"
+    />
+    <meta property="og:image" content="./og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="শিহাব — ব্যক্তিগত পোর্টফোলিও">
+  <rect width="1200" height="630" fill="#f6f5f2" />
+  <rect x="64" y="64" width="1072" height="502" fill="none" stroke="#e2dfd9" />
+  <rect x="112" y="102" width="40" height="3" rx="1.5" fill="#a34f2e" />
+  <text x="112" y="180" font-family="'Anek Bangla', 'Noto Sans Bengali', sans-serif" font-size="28" fill="#69655f">ব্যক্তিগত পোর্টফোলিও</text>
+  <text x="104" y="340" font-family="'Anek Bangla', 'Noto Sans Bengali', sans-serif" font-size="128" font-weight="600" fill="#191816">শিহাব</text>
+  <text x="112" y="420" font-family="'Anek Bangla', 'Noto Sans Bengali', sans-serif" font-size="36" fill="#191816">নূরানী শিক্ষক · Kotlin learner · ওয়েব</text>
+  <text x="112" y="500" font-family="'Inter', sans-serif" font-size="24" fill="#69655f">shihabxpro</text>
+  <circle cx="1120" cy="546" r="5" fill="#a34f2e" />
+</svg>
