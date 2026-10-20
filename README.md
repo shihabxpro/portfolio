@@ -5,29 +5,42 @@
 [![Bengali / English](https://img.shields.io/badge/language-Bengali%20%7C%20English-orange)](https://shihabxpro.github.io/portfolio/)
 [![GitHub Pages](https://img.shields.io/badge/deploy-GitHub%20Pages-blue)](https://shihabxpro.github.io/portfolio/)
 
-Personal portfolio of **Shihab** — Nurani teacher, Kotlin learner and web developer. A Bengali-first, bilingual site built with React and Vite, featuring dark mode, an animated hero, projects, skills and contact sections.
+Personal portfolio of **Shihab** — Nurani teacher, Kotlin learner and web developer.  
+A Bengali-first, bilingual site built with React and Vite, featuring dark mode, an animated hero, projects, skills and contact sections.
 
-## Live demo
+---
 
-https://shihabxpro.github.io/portfolio/
+## 🚀 Live Demo
 
-## Features
+👉 **[https://shihabxpro.github.io/portfolio/](https://shihabxpro.github.io/portfolio/)**
 
-- Bilingual interface (Bengali / English) with a persistent language toggle
-- Light, dark and system theme support
-- Animated typewriter hero roles with a hand-drawn ink flourish
-- Projects, skills and contact sections
-- Minimal warm monochrome design with terracotta accents
-- Deployed to GitHub Pages via GitHub Actions
+---
 
-## Tech stack
+## ✨ Features
 
-- React 18
-- Vite
-- Custom-property CSS (scroll-reveal, keyframes, theme tokens)
-- GitHub Actions + GitHub Pages
+- **Bilingual interface** — Bengali / English with a persistent language toggle
+- **Theme support** — Light, dark and system theme
+- **Animated hero** — Typewriter roles with hand-drawn ink flourish
+- **Projects & Skills** — Showcase sections with clean cards
+- **Contact section** — Reach out directly
+- **Minimal warm monochrome design** — With terracotta accents
+- **Deployed to GitHub Pages** — Via GitHub Actions
 
-## Project structure
+---
+
+## 🛠 Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| Framework | React 18 |
+| Build tool | Vite 6 |
+| Styling | Custom CSS (scroll-reveal, keyframes, theme tokens) |
+| i18n | Custom LanguageContext |
+| Deployment | GitHub Actions → GitHub Pages |
+
+---
+
+## 📁 Project Structure
 
 ```
 portfolio/
@@ -40,15 +53,17 @@ portfolio/
 ├── src/
 │   ├── main.jsx
 │   ├── App.jsx
-│   ├── data/           site.js, projects.js, skills.js
-│   ├── components/     Header, Hero, About, Projects, Contact, Footer, Icon, ...
-│   ├── hooks/          useReveal.js
-│   ├── i18n/           LanguageContext.jsx, ui.js
-│   └── styles/         global.css, sections.css
+│   ├── data/        site.js, projects.js, skills.js
+│   ├── components/  Header, Hero, About, Projects, Contact, Footer, Icon, ...
+│   ├── hooks/       useReveal.js
+│   ├── i18n/        LanguageContext.jsx, ui.js
+│   └── styles/      global.css, sections.css
 └── .github/workflows/deploy.yml
 ```
 
-## Getting started
+---
+
+## 🧭 Getting Started
 
 ```bash
 # clone
@@ -68,13 +83,22 @@ npm run build
 npm run preview
 ```
 
-## Deployment
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-Push to the `main` branch. GitHub Actions builds the site and deploys it to GitHub Pages automatically. Set the Pages source to **GitHub Actions** in repository settings.
+---
 
-## Contact
+## 🚢 Deployment
 
-- Email: muhammadshihablbl@gmail.com
-- GitHub: https://github.com/shihabxpro
+Push to the `main` branch. GitHub Actions builds the site and deploys it to GitHub Pages automatically.  
+Set the Pages source to **GitHub Actions** in repository settings.
+
+---
+
+## 📬 Contact
+
+- **Email:** muhammadshihablbl@gmail.com
+- **GitHub:** https://github.com/shihabxpro
+
+---
 
 Personal portfolio. All rights reserved.
