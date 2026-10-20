@@ -1,14 +1,7 @@
 import { useEffect, useRef } from "react";
 import Icon from "./Icon.jsx";
 import { useLang } from "../i18n/LanguageContext.jsx";
-
-const BENGALI_DIGITS = "০১২৩৪৫৬৭৮৯";
-
-function formatIndex(value, lang) {
-  const text = String(value).padStart(2, "0");
-  if (lang !== "bn") return text;
-  return text.replace(/\d/g, (digit) => BENGALI_DIGITS[Number(digit)]);
-}
+import { formatIndex } from "../i18n/format.js";
 
 export default function ProjectCard({ project, index }) {
   const { lang, u, t } = useLang();

@@ -20,7 +20,7 @@ function Site() {
       </a>
       <ScrollProgress />
       <Header />
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <Hero />
         <About />
         <Projects />

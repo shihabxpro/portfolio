@@ -7,12 +7,11 @@ export default function Section({
   title,
   icon,
   children,
-  className = "",
 }) {
   return (
     <section
       id={id}
-      className={`section ${className}`.trim()}
+      className="section"
       aria-labelledby={`${id}-title`}
     >
       <div className="container">

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f5f2" />
     <script>
       document.documentElement.classList.add("js");
       try {
@@ -11,7 +12,17 @@
           stored === "dark" ||
           (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
         document.documentElement.dataset.theme = isDark ? "dark" : "light";
+        var themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) {
+          themeColor.setAttribute("content", isDark ? "#090908" : "#f6f5f2");
+        }
       } catch {}
+      window.setTimeout(function () {
+        var root = document.getElementById("root");
+        if (root && root.childElementCount === 0) {
+          document.documentElement.classList.remove("js");
+        }
+      }, 3000);
     </script>
     <title>শিহাব — নূরানী শিক্ষক ও Kotlin লার্নার</title>
     <meta
@@ -20,23 +31,45 @@
     />
     <meta name="author" content="শিহাব" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f6f5f2" />
+    <link rel="canonical" href="https://shihabxpro.github.io/portfolio/" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,600&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,600&family=Sora:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="bn_BD" />
+    <meta property="og:url" content="https://shihabxpro.github.io/portfolio/" />
+    <meta property="og:site_name" content="শিহাব" />
     <meta property="og:title" content="শিহাব — নূরানী শিক্ষক ও Kotlin লার্নার" />
     <meta
       property="og:description"
       content="প্রজেক্ট, দক্ষতা ও যোগাযোগ — শিহাবের ব্যক্তিগত পোর্টফোলিও।"
     />
-    <meta property="og:image" content="./og.svg" />
+    <meta
+      property="og:image"
+      content="https://shihabxpro.github.io/portfolio/og.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="শিহাব — ব্যক্তিগত পোর্টফোলিও" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="শিহাব — নূরানী শিক্ষক ও Kotlin লার্নার"
+    />
+    <meta
+      name="twitter:description"
+      content="প্রজেক্ট, দক্ষতা ও যোগাযোগ — শিহাবের ব্যক্তিগত পোর্টফোলিও।"
+    />
+    <meta
+      name="twitter:image"
+      content="https://shihabxpro.github.io/portfolio/og.png"
+    />
+    <meta name="twitter:image:alt" content="শিহাব — ব্যক্তিগত পোর্টফোলিও" />
   </head>
   <body>
     <div id="root"></div>

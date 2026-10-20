@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+const segmenter =
+  typeof Intl !== "undefined" && Intl.Segmenter
+    ? new Intl.Segmenter("bn", { granularity: "grapheme" })
+    : null;
 
 function toGraphemes(text) {
-  if (typeof Intl !== "undefined" && Intl.Segmenter) {
-    const segmenter = new Intl.Segmenter("bn", { granularity: "grapheme" });
-    return Array.from(segmenter.segment(text), (item) => item.segment);
-  }
-  return Array.from(text);
+  return segmenter
+    ? Array.from(segmenter.segment(text), (item) => item.segment)
+    : Array.from(text);
 }
 
 export default function Typewriter({
@@ -38,10 +41,13 @@ export default function Typewriter({
     };
   }, []);
 
+  const target = useMemo(
+    () => toGraphemes(words[wordIndex]),
+    [words, wordIndex]
+  );
+
   useEffect(() => {
     if (reduced || paused) return undefined;
-
-    const target = toGraphemes(words[wordIndex]);
 
     if (!deleting && count >= target.length) {
       const timer = setTimeout(() => setDeleting(true), holdTime);
@@ -63,7 +69,7 @@ export default function Typewriter({
   }, [
     count,
     deleting,
-    wordIndex,
+    target,
     reduced,
     paused,
     words,
@@ -72,7 +78,6 @@ export default function Typewriter({
     holdTime,
   ]);
 
-  const target = toGraphemes(words[wordIndex]);
   const visible = reduced ? words[0] : target.slice(0, count).join("");
   const color = colors ? colors[wordIndex % colors.length] : undefined;
 

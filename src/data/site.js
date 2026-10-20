@@ -1,10 +1,6 @@
 export const site = {
   name: { bn: "শিহাব", en: "Shihab" },
   handle: "shihabxpro",
-  tagline: {
-    bn: "নূরানী শিক্ষক · Kotlin learner · বাংলায় কোড শেখানোর কারিগর",
-    en: "Nurani teacher · Kotlin learner · craftsman of Bangla code learning",
-  },
   intro: {
     bn: "Kotlin ও Android শিখছি, আর বাংলা ভাষায় Kotlin শেখার একটা ইন্টারঅ্যাকটিভ প্ল্যাটফর্ম বানাচ্ছি। এই সাইটে আমার কাজ, দক্ষতা আর যোগাযোগের ঠিকানা।",
     en: "I'm learning Kotlin and Android, and building an interactive platform to learn Kotlin in Bangla. This site holds my work, skills and contact.",
@@ -56,7 +52,11 @@ export const site = {
       icon: "facebook",
     },
     { label: "Telegram", href: "https://t.me/shihabxai", icon: "telegram" },
-    { label: "WhatsApp", href: "https://wa.me/shihab.pro", icon: "whatsapp" },
+    {
+      label: "WhatsApp",
+      href: "https://wa.me/8801614998052",
+      icon: "whatsapp",
+    },
     {
       label: "GitHub",
       href: "https://github.com/shihabxpro",

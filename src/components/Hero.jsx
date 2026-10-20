@@ -2,12 +2,7 @@ import Typewriter from "./Typewriter.jsx";
 import { site } from "../data/site.js";
 import { useLang } from "../i18n/LanguageContext.jsx";
 
-const ROLE_COLORS = [
-  "var(--role-1)",
-  "var(--role-2)",
-  "var(--role-3)",
-  "var(--role-4)",
-];
+const ROLE_COLORS = ["var(--role-1)", "var(--role-2)", "var(--role-3)"];
 
 export default function Hero() {
   const { lang, u, t } = useLang();

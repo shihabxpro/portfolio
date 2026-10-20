@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site } from "../data/site.js";
 import { useLang } from "../i18n/LanguageContext.jsx";
 import Icon from "./Icon.jsx";
@@ -17,6 +17,8 @@ export default function Header() {
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState(getInitialTheme);
+  const menuBtnRef = useRef(null);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
@@ -65,11 +67,27 @@ export default function Header() {
     if (!open) return undefined;
 
     const onKeyDown = (event) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      menuBtnRef.current?.focus();
+    };
+
+    const onPointerDown = (event) => {
+      if (
+        navRef.current?.contains(event.target) ||
+        menuBtnRef.current?.contains(event.target)
+      ) {
+        return;
+      }
+      setOpen(false);
     };
 
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
   }, [open]);
 
   return (
@@ -88,6 +106,7 @@ export default function Header() {
         <div className="site-header__actions">
           <nav
             id="site-menu"
+            ref={navRef}
             className={`site-nav${open ? " is-open" : ""}`}
             aria-label={u.navLabel}
           >
@@ -142,6 +161,7 @@ export default function Header() {
 
           <button
             className="menu-btn"
+            ref={menuBtnRef}
             type="button"
             aria-expanded={open}
             aria-controls="site-menu"

@@ -8,11 +8,17 @@ export default function ScrollProgress() {
     if (!bar) return undefined;
 
     let frame = 0;
+    let scrollable = 0;
+
+    const measure = () => {
+      scrollable = Math.max(
+        document.documentElement.scrollHeight - window.innerHeight,
+        0
+      );
+    };
 
     const update = () => {
       frame = 0;
-      const scrollable =
-        document.documentElement.scrollHeight - window.innerHeight;
       const progress =
         scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
       bar.style.transform = `scaleX(${progress})`;
@@ -23,13 +29,26 @@ export default function ScrollProgress() {
       frame = window.requestAnimationFrame(update);
     };
 
+    const onResize = () => {
+      measure();
+      onScroll();
+    };
+
+    measure();
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", onResize);
+
+    const resizeObserver =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(onResize)
+        : null;
+    resizeObserver?.observe(document.body);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("resize", onResize);
+      resizeObserver?.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);

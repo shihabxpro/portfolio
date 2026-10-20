@@ -16,14 +16,13 @@
   --role-1: #a34f2e;
   --role-2: #8a6414;
   --role-3: #4f6b3a;
-  --role-4: #3c5c78;
   --header-shadow: 0 18px 40px -38px rgba(163, 79, 46, 0.55);
   --card-shadow: 0 24px 55px -32px rgba(163, 79, 46, 0.22),
     0 12px 30px -24px rgba(25, 24, 22, 0.35);
   --font-bn: "Anek Bangla", "Hind Siliguri", "Noto Sans Bengali", system-ui,
     sans-serif;
   --font-latin: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Sora", "Space Grotesk", var(--font-latin);
+  --font-display: "Sora", var(--font-latin);
   --container: 1040px;
   --gutter: clamp(1.25rem, 4vw, 2rem);
   --section-y: clamp(4rem, 10vw, 7.5rem);
@@ -49,7 +48,6 @@
   --role-1: #e6a07a;
   --role-2: #e6bd72;
   --role-3: #b2d494;
-  --role-4: #a6c8e6;
   --header-shadow: 0 20px 45px -32px rgba(0, 0, 0, 0.95);
   --card-shadow: 0 32px 70px -38px rgba(0, 0, 0, 0.95),
     0 0 0 1px rgba(230, 160, 122, 0.09),
@@ -197,6 +195,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   scrollbar-color: var(--line-strong) var(--bg);
 }
 
@@ -213,7 +212,7 @@ html[lang="en"] h4 {
 }
 
 html[lang="en"] .hero__title {
-  font-family: "Fraunces", "Space Grotesk", var(--font-latin);
+  font-family: "Fraunces", var(--font-latin);
   font-style: italic;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -236,10 +235,6 @@ html[lang="en"] .hero__title-inner {
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -334,6 +329,11 @@ button {
 
 .skip-link:focus-visible {
   transform: translate(-50%, 0);
+}
+
+#main:focus,
+#main:focus-visible {
+  outline: none;
 }
 
 .btn {
@@ -595,7 +595,7 @@ a:hover .arrow {
 }
 
 html[lang="en"] .brand__text {
-  font-family: "Fraunces", "Space Grotesk", var(--font-latin);
+  font-family: "Fraunces", var(--font-latin);
   font-size: 1.3rem;
   font-style: italic;
   font-weight: 600;
@@ -716,6 +716,7 @@ html[lang="en"] .brand__handle {
 .site-footer__top {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: 0.5rem;
   padding: 0.3rem 0.85rem 0.3rem 0.3rem;
   border: 1px solid var(--line);
@@ -825,8 +826,8 @@ html[lang="en"] .brand__handle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line-strong);
   border-radius: 9px;
   background: transparent;
@@ -912,6 +913,20 @@ html[lang="en"] .brand__handle {
   }
 }
 
+@media (max-width: 360px) {
+  .site-header__inner {
+    gap: 0.75rem;
+  }
+
+  .site-header__actions {
+    gap: 0.4rem;
+  }
+
+  .brand {
+    gap: 0.5rem;
+  }
+}
+
 @keyframes pop {
   50% {
     transform: scale(1.06);
@@ -937,6 +952,17 @@ html[lang="en"] .brand__handle {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 800px), (hover: none) {
+  .site-header,
+  .site-header.is-scrolled,
+  :root[data-theme="dark"] .site-header,
+  :root[data-theme="dark"] .site-header.is-scrolled {
+    background: var(--bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 }
 

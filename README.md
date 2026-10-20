@@ -49,17 +49,21 @@ portfolio/
 ├── package.json
 ├── public/
 │   ├── favicon.svg
-│   └── og.svg
+│   ├── og.png
+│   ├── og.svg
+│   └── sitemap.xml
 ├── src/
 │   ├── main.jsx
 │   ├── App.jsx
-│   ├── data/        site.js, projects.js, skills.js
+│   ├── data/        site.js, projects.js, skills.js, brandIcons.js
 │   ├── components/  Header, Hero, About, Projects, Contact, Footer, Icon, ...
 │   ├── hooks/       useReveal.js
-│   ├── i18n/        LanguageContext.jsx, ui.js
+│   ├── i18n/        LanguageContext.jsx, ui.js, format.js
 │   └── styles/      global.css, sections.css
 └── .github/workflows/deploy.yml
 ```
+
+`public/og.svg` is the editable source for `public/og.png` (the social preview image).
 
 ---
 

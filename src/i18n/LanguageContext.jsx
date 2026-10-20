@@ -11,7 +11,7 @@ import { ui } from "./ui.js";
 const LanguageContext = createContext(null);
 const STORAGE_KEY = "shihab-lang";
 
-export function pick(value, lang) {
+function pick(value, lang) {
   if (value == null || typeof value === "string") return value;
   return value[lang] ?? value.bn ?? "";
 }

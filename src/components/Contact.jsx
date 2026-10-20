@@ -64,39 +64,24 @@ export default function Contact() {
           data-reveal
           style={{ "--reveal-delay": "180ms" }}
         >
-          {site.socials.map((social) =>
-            social.href ? (
-              <li key={social.label}>
-                <a
-                  className="socials__link"
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="socials__icon">
-                    <Icon name={social.icon} size={15} />
-                  </span>
-                  <span className="socials__label">{social.label}</span>
-                  <span className="arrow socials__arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
-              </li>
-            ) : (
-              <li key={social.label}>
-                <span
-                  className="socials__link socials__link--pending"
-                  title={u.pending}
-                >
-                  <span className="socials__icon">
-                    <Icon name={social.icon} size={15} />
-                  </span>
-                  <span className="socials__label">{social.label}</span>
-                  <span className="sr-only">— {u.pending}</span>
+          {site.socials.map((social) => (
+            <li key={social.label}>
+              <a
+                className="socials__link"
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="socials__icon">
+                  <Icon name={social.icon} size={15} />
                 </span>
-              </li>
-            )
-          )}
+                <span>{social.label}</span>
+                <span className="arrow socials__arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </li>
+          ))}
           <li className="socials__location">
             <span className="socials__note">
               <Icon name="pin" size={15} />
