@@ -21,7 +21,7 @@ export default function Header() {
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", theme === "dark" ? "#0b0b0a" : "#f6f5f2");
+      meta.setAttribute("content", theme === "dark" ? "#090908" : "#f6f5f2");
     }
   }, [theme]);
 
