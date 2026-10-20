@@ -23,7 +23,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <li
             key={project.title.en}
-            data-reveal="scale"
+            data-reveal="blur"
             style={{ "--reveal-delay": `${index * 80}ms` }}
           >
             <ProjectCard project={project} index={index + 1} />

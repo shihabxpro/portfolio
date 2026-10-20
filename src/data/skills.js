@@ -6,7 +6,12 @@ export const skillGroups = [
       en: "From the basics to building small apps.",
     },
     icon: "code",
-    items: ["Kotlin", "Jetpack Compose", "Android Studio", "Gradle"],
+    items: [
+      { name: "Kotlin", icon: "kotlin" },
+      { name: "Jetpack Compose", icon: "jetpackcompose" },
+      { name: "Android Studio", icon: "androidstudio" },
+      { name: "Gradle", icon: "gradle" },
+    ],
   },
   {
     title: { bn: "ওয়েব ডেভেলপমেন্ট", en: "Web development" },
@@ -15,7 +20,13 @@ export const skillGroups = [
       en: "Building sites, design and interaction.",
     },
     icon: "browser",
-    items: ["HTML", "CSS", "JavaScript", "React", "Vite"],
+    items: [
+      { name: "HTML", icon: "html5" },
+      { name: "CSS", icon: "css" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "React", icon: "react" },
+      { name: "Vite", icon: "vite" },
+    ],
   },
   {
     title: { bn: "টুল ও পরিবেশ", en: "Tools & environment" },
@@ -24,7 +35,12 @@ export const skillGroups = [
       en: "The tools I use every day.",
     },
     icon: "terminal",
-    items: ["Git", "GitHub", "Termux", "Linux"],
+    items: [
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Termux", icon: "terminal" },
+      { name: "Linux", icon: "linux" },
+    ],
   },
   {
     title: { bn: "অন্যান্য", en: "Other" },
@@ -34,11 +50,16 @@ export const skillGroups = [
     },
     icon: "sparkle",
     items: [
-      { bn: "নূরানী শিক্ষা", en: "Nurani education" },
-      { bn: "সমস্যা সমাধান", en: "Problem solving" },
-      { bn: "গেমিং", en: "Gaming" },
+      { name: { bn: "নূরানী শিক্ষা", en: "Nurani education" }, icon: "book" },
+      { name: { bn: "সমস্যা সমাধান", en: "Problem solving" }, icon: "puzzle" },
+      { name: { bn: "গেমিং", en: "Gaming" }, icon: "gamepad" },
     ],
   },
 ];
 
-export const learning = ["Kotlin", "Jetpack Compose", "Android", "React"];
+export const learning = [
+  { name: "Kotlin", icon: "kotlin" },
+  { name: "Jetpack Compose", icon: "jetpackcompose" },
+  { name: "Android", icon: "android" },
+  { name: "React", icon: "react" },
+];

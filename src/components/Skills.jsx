@@ -31,7 +31,10 @@ export default function Skills() {
             <p className="skill-group__note">{t(group.note)}</p>
             <ul className="skill-group__list">
               {group.items.map((item) => (
-                <li key={t(item)}>{t(item)}</li>
+                <li key={t(item.name)}>
+                  <Icon name={item.icon} size={14} />
+                  <span>{t(item.name)}</span>
+                </li>
               ))}
             </ul>
           </div>
@@ -39,11 +42,15 @@ export default function Skills() {
       </div>
 
       <div className="learning" data-reveal>
-        <h3 className="learning__title">{u.skillsLearning}</h3>
-        <ul className="tags">
+        <h3 className="learning__title">
+          <span className="learning__pulse" aria-hidden="true" />
+          {u.skillsLearning}
+        </h3>
+        <ul className="learning__chips">
           {learning.map((item) => (
-            <li className="tag" key={item}>
-              {item}
+            <li className="learning-chip" key={item.name}>
+              <Icon name={item.icon} size={13} />
+              <span>{item.name}</span>
             </li>
           ))}
         </ul>

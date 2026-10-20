@@ -73,10 +73,11 @@ export default function Contact() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Icon name={social.icon} size={16} />
-                  {social.label}
-                  <span className="arrow" aria-hidden="true">
-                    {" "}
+                  <span className="socials__icon">
+                    <Icon name={social.icon} size={15} />
+                  </span>
+                  <span className="socials__label">{social.label}</span>
+                  <span className="arrow socials__arrow" aria-hidden="true">
                     ↗
                   </span>
                 </a>
@@ -87,14 +88,16 @@ export default function Contact() {
                   className="socials__link socials__link--pending"
                   title={u.pending}
                 >
-                  <Icon name={social.icon} size={16} />
-                  {social.label}
+                  <span className="socials__icon">
+                    <Icon name={social.icon} size={15} />
+                  </span>
+                  <span className="socials__label">{social.label}</span>
                   <span className="sr-only">— {u.pending}</span>
                 </span>
               </li>
             )
           )}
-          <li>
+          <li className="socials__location">
             <span className="socials__note">
               <Icon name="pin" size={15} />
               {t(site.location)}

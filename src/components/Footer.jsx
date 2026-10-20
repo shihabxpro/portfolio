@@ -8,14 +8,18 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container site-footer__inner" data-reveal>
-        <p>
-          © {lang === "en" ? "2026" : "২০২৬"} {t(site.name)}
-        </p>
-        <p>{u.footerBuilt}</p>
-        <a className="site-footer__top" href="#home">
-          <Icon name="arrow-up" size={15} />
-          {u.footerTop}
-        </a>
+        <div className="site-footer__meta">
+          <p>
+            © {lang === "en" ? "2026" : "২০২৬"} {t(site.name)}
+          </p>
+          <p>{u.footerBuilt}</p>
+          <a className="site-footer__top" href="#home">
+            <span className="site-footer__top-icon" aria-hidden="true">
+              <Icon name="arrow-up" size={14} />
+            </span>
+            {u.footerTop}
+          </a>
+        </div>
       </div>
     </footer>
   );

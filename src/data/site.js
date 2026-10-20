@@ -50,9 +50,13 @@ export const site = {
     },
   ],
   socials: [
-    { label: "Facebook", href: "", icon: "facebook" },
-    { label: "Telegram", href: "", icon: "telegram" },
-    { label: "WhatsApp", href: "", icon: "whatsapp" },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/muhammadshihabjht",
+      icon: "facebook",
+    },
+    { label: "Telegram", href: "https://t.me/shihabxai", icon: "telegram" },
+    { label: "WhatsApp", href: "https://wa.me/shihab.pro", icon: "whatsapp" },
     {
       label: "GitHub",
       href: "https://github.com/shihabxpro",
