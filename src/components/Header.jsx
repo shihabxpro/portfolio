@@ -4,6 +4,12 @@ import { useLang } from "../i18n/LanguageContext.jsx";
 import Icon from "./Icon.jsx";
 
 const NAV_ITEMS = ["about", "projects", "skills", "contact"];
+const NAV_ICONS = {
+  about: "user",
+  projects: "folder",
+  skills: "sparkle",
+  contact: "mail",
+};
 const THEME_KEY = "shihab-theme";
 
 function getInitialTheme() {
@@ -95,7 +101,13 @@ export default function Header() {
       <div className="container site-header__inner">
         <a className="brand" href="#home" onClick={() => setOpen(false)}>
           <span className="brand__mark" aria-hidden="true">
-            {lang === "en" ? "S" : "শ"}
+            <img
+              src={`${import.meta.env.BASE_URL}profile.webp`}
+              alt=""
+              width="640"
+              height="640"
+              decoding="async"
+            />
           </span>
           <span className="brand__text">
             {t(site.name)}
@@ -119,6 +131,9 @@ export default function Header() {
                     aria-current={active === id ? "location" : undefined}
                     onClick={() => setOpen(false)}
                   >
+                    <span className="site-nav__icon" aria-hidden="true">
+                      <Icon name={NAV_ICONS[id]} size={16} />
+                    </span>
                     {u.nav[id]}
                   </a>
                 </li>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useReveal } from "./hooks/useReveal.js";
 import { LanguageProvider, useLang } from "./i18n/LanguageContext.jsx";
 import ScrollProgress from "./components/ScrollProgress.jsx";
@@ -8,6 +9,7 @@ import Projects from "./components/Projects.jsx";
 import Skills from "./components/Skills.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import Intro from "./components/Intro.jsx";
 
 function Site() {
   useReveal();
@@ -33,8 +35,11 @@ function Site() {
 }
 
 export default function App() {
+  const [introDone, setIntroDone] = useState(false);
+
   return (
     <LanguageProvider>
+      {!introDone && <Intro onDone={() => setIntroDone(true)} />}
       <Site />
     </LanguageProvider>
   );

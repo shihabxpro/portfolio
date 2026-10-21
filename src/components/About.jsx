@@ -16,19 +16,21 @@ export default function About() {
       icon="user"
     >
       <div className="about">
-        <dl className="facts" data-reveal="left">
-          {site.facts.map((fact, index) => (
-            <div className="facts__row" key={index}>
-              <dt>
-                <span className="icon-tile icon-tile--sm">
-                  <Icon name={fact.icon} size={14} />
-                </span>
-                {t(fact.label)}
-              </dt>
-              <dd>{t(fact.value)}</dd>
-            </div>
-          ))}
-        </dl>
+        <div className="about__aside">
+          <dl className="facts" data-reveal="left">
+            {site.facts.map((fact, index) => (
+              <div className="facts__row" key={index}>
+                <dt>
+                  <span className="icon-tile icon-tile--sm">
+                    <Icon name={fact.icon} size={14} />
+                  </span>
+                  {t(fact.label)}
+                </dt>
+                <dd>{t(fact.value)}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
 
         <div className="about__body">
           {paragraphs.map((paragraph, index) => (
